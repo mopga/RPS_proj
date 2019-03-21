@@ -14,14 +14,17 @@ app = Flask(__name__)
 
 
 @app.route("/")
-async def resp():
+def index():
     return rps.rps(line, p2)
 
-if __name__ == '__main__':
-    f = open('nabor.txt')
 
-    for line in f.read():
-        p1 = line
-        p2 = choice(choises)
-        resp
-    f.close()
+@app.route("/result")
+def result(p1, p2):
+    return rps.rps(p1, p2)
+
+
+if __name__ == '__main__':
+    index()
+    while True:
+        result()
+
